@@ -57,106 +57,144 @@
 
             <LinearLayout
                 android:id="@+id/layoutCurrency1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:background="@drawable/spinner_background">
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/from_spinner"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="IDR"
-                    android:textSize="20dp"
-                    android:textColor="@color/colorBlackText"/>
-                <ImageView
-                    android:id="@+id/iv_arrow_expand"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_arrow_expand"
-                    android:textColor="@color/colorBlackText"/>
+                    android:focusable="auto"
+                    android:padding="5dp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCurrency1"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent">
                 <EditText
+                    android:id="@+id/et_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:text="1"
                     android:textSize="20dp"
                     android:textColor="@color/colorOrangeText"
-                    android:layout_gravity="right"/>
+                    android:layout_gravity="center"/>
                 <TextView
+                    android:id="@+id/tv_fromcurrency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Indonesian rupiah"
                     android:textSize="15dp"
                     android:textColor="@color/colorBlackText"
-                    android:layout_gravity="right"/>
+                    android:layout_gravity="center"/>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_convert"
+            android:layout_width="30dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:src="@drawable/ic_convert"
+            app:layout_constraintTop_toBottomOf="@+id/layoutCurrencyParent1"
+            app:layout_constraintBottom_toTopOf="@+id/layoutCurrencyParent2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:id="@+id/layoutCurrencyParent2"
-            app:layout_constraintTop_toBottomOf="@+id/layoutCurrencyParent1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_convert"
+            app:layout_constraintBottom_toTopOf="@+id/btnConvert"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:id="@+id/layoutCurrency2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:background="@drawable/spinner_background">
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/to_spinner"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="USD"
-                    android:textSize="20dp"
-                    android:textColor="@color/colorBlackText"/>
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_arrow_expand"
-                    android:textColor="@color/colorBlackText"
-                    tools:ignore="DuplicateIds" />
+                    android:focusable="auto"
+                    android:padding="5dp" />
+
             </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/layoutCurrency2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="USD"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:textColor="@color/colorBlackText"/>-->
+<!--                <ImageView-->
+<!--                    android:layout_width="15dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/ic_arrow_expand"-->
+<!--                    android:textColor="@color/colorBlackText"-->
+<!--                    tools:ignore="DuplicateIds" />-->
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCurrency2"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent">
                 <TextView
+                    android:id="@+id/tv_totalConverted"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="0"
                     android:textSize="20dp"
                     android:textColor="@color/colorBlackText"
-                    android:layout_gravity="right"/>
+                    android:layout_gravity="center"/>
                 <TextView
+                    android:id="@+id/tv_tocurrency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="United Stated Dollar"
                     android:textSize="15dp"
                     android:textColor="@color/colorBlackText"
-                    android:layout_gravity="right"/>
+                    android:layout_gravity="center"/>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
